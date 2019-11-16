@@ -1,0 +1,9 @@
+// Mini Banking System
+
+
+Please follow the steps :
+
+1. Please find the Database file in "DB" folder
+2. Change the project url from js/setup_text.js/setup_text to your project root
+3. Chage database setup from config/dbConnect.php file
+
