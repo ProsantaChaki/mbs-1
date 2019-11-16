@@ -28,7 +28,7 @@ else{
 	
 	<script src="theme/js/jquery.min.js"></script>
     <script src="js/static_text.js"></script>
-    <script src="js/common.js"></script> 
+    <script src="js/common.js"></script>
 	
 </head>
 <body class="nav-md">
@@ -71,6 +71,7 @@ else{
                                     <span class=" fa fa-angle-down"></span>
                                 </a>
                                 <ul class="dropdown-menu dropdown-usermenu animated fadeInDown pull-right">
+                                    <li><a href="index.php"> C_Profile</a></li>
                                     <li><a href="index.php?module=personal&view=profile">  Profile</a></li>
                                     <li><a href="logout.php"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
                                 </ul>
@@ -134,7 +135,7 @@ else{
 
     <!-- bootstrap progress js -->
 	<script src="theme/js/progressbar/bootstrap-progressbar.min.js" type="text/javascript"></script>
-    <script src="theme/js/nicescroll/jquery.nicescroll.min.js" type="text/javascript"></script>
+    <script src="theme/js/nicescroll/jquery.nicescroll.min.js" type="text/javascript"> </script>
     
  	
 
@@ -146,7 +147,9 @@ else{
 </html>
 
 <script>
+    //alert('load index')
 $(document).ready(function () {
+    //alert('index')
 
 	var customer_id = "<?php echo $_SESSION['id']; ?>";
 	

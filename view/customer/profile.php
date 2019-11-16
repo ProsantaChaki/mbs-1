@@ -64,6 +64,7 @@ $(document).ready(function () {
 	var id 	= "<?php echo $_SESSION['id']; ?>";	
 	
 	load_customer_profile = function load_customer_profile(){
+	    //alert('profile')
 		$.ajax({
 			url: project_url+"controller/customerController.php",
 			dataType: "json",
@@ -73,22 +74,27 @@ $(document).ready(function () {
 				q: "get_customer_info"
 			},
 			success: function(data){
+			    //alert('ok')
 				$('#id').val(data.records.id);
 				$('#customer_name').val(data.records.customer_name);
 				$('#email').val(data.records.email);
 				$('#personal_code').val(data.records.personal_code);
 			}
-		});
-	}
+        });
+        //alert(project_url+"controller/customerController.php")
+
+    }
 	
 	load_customer_profile();
 	
 
-	$('#saveBtn').click(function(event){		
-		event.preventDefault();
+	$('#saveBtn').click(function(event){
+        //alert('profile')
+
+        event.preventDefault();
 		var formData = new FormData($('#customer_update_form')[0]);
 		formData.append("q","update_information");
-		
+
 		$.ajax({
 			url: project_url+"controller/customerController.php",
 			type:'POST',

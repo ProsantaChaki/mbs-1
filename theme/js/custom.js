@@ -5,9 +5,11 @@
  */
 
 /** ******  left menu  *********************** **/
-$(function () {	
+$(function () {
+
 	var current_page = location.search.split('view=')[1];
 	var current_mmod = location.search.split('module=');
+    //alert(current_page)
 	if($.trim(current_mmod[1]) != "undefined" && $.trim(current_mmod[1]) != ""){
 		var current_module = current_mmod[1].split('&')[0];
 		if(current_page != "undefined"){
@@ -81,6 +83,7 @@ $(function () {
 
 /* Sidebar Menu active class */
 $(function () {
+    //alert('sidebar')
     var url = window.location;
     $('#sidebar-menu a[href="' + url + '"]').parent('li').addClass('current-page');
     $('#sidebar-menu a').filter(function () {

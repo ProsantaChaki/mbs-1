@@ -70,7 +70,7 @@ function create_set_grid_table_row(records_array,colums_array,condition_array,mo
 		else{
 			html += '<tr class="odd pointer">';
 		}
-
+		var id = 0;
 
 		for(var j = 0; j < colums_array.length; j++) {
 			// split the columns for spliting the alignment value
@@ -91,12 +91,23 @@ function create_set_grid_table_row(records_array,colums_array,condition_array,mo
 					else
 						html +='<td class="'+column_arr[0]+' '+column_arr[1]+'">'+data[column_arr[0]]+'</td>';
 				}
+				id = data[column_arr[0]];
+
 			}
 			else{
 				html +='<td class="'+column_arr[0]+'">'+data[column_arr[0]]+'</td>';
 			}
+			//alert(data[column_arr[0]])
+
 		}
-			html += '</tr>';
+		//alert(id)		html += '<td> <button onclick="view_nominee('+id+')">View</button></td>';
+        if(colums_array[1]=='n_name'){
+		html += '<td> <button onclick="view_nominee('+id+')">View</button></td>';
+		html += '<td> <button onclick="edit_nominee('+id+')">Edit</button></td>';
+		html += '<td> <button onclick="delete_nominee('+id+')">Delete</button></td>';
+        }
+
+		html += '</tr>';
 	});				
 	$('#'+grid_id+' tbody').append(html);	
 														
